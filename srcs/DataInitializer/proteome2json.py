@@ -2,9 +2,9 @@ import re
 import json
 import os
 
-def fasta_to_json(fasta_file, json_file):
+def fasta_to_json():
     entries = {}
-    with open(fasta_file, 'r') as f:
+    with open(fasta_file_path, 'r') as f:
         lines = f.readlines()
     l = len(lines)
     # Iterate through the lines of the FASTA file
@@ -35,12 +35,11 @@ def fasta_to_json(fasta_file, json_file):
     # Convert the list of entries to JSON
     json_data = json.dumps(entries, indent=2)
     # Save JSON to a file (optional)
-    with open(json_file, 'w') as j:
+    with open(json_file_path, 'w') as j:
         j.write(json_data)
-    print(f"{cnt} entries detected in total, saved to {json_file}")
+    print(f"{cnt} entries detected in total, saved to {json_file_path}")
 
 curr_dir = os.path.curdir # project dir (base dir)
-# Example usage
 fasta_file_path = os.path.join(curr_dir , "data/OriginData/UP000000625_83333.fasta")
 json_file_path = os.path.join(curr_dir , "data/JsonData/proteome_json.json")
-json_data = fasta_to_json(fasta_file_path, json_file_path)
+fasta_to_json()

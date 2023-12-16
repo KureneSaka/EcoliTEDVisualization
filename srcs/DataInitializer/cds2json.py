@@ -2,10 +2,10 @@ import re
 import json
 import os
 
-def fasta_to_json(fasta_file, json_file, extra_file):
+def fasta_to_json():
     entries = {}
     extras = []
-    with open(fasta_file, 'r') as f:
+    with open(fasta_file_path, 'r') as f:
         lines = f.readlines()
     l = len(lines)
     # Iterate through the lines of the FASTA file
@@ -67,20 +67,20 @@ def fasta_to_json(fasta_file, json_file, extra_file):
                 extras.append(entry)
         else:
             i += 1
-    print(cnt)
     # Convert the list of entries to JSON
     json_data = json.dumps(entries, indent=2)
     extra_data = json.dumps(extras, indent=2)
     # Save JSON to a file (optional)
-    with open(json_file, 'w') as j:
+    with open(json_file_path, 'w') as j:
         j.write(json_data)
-    with open(extra_file, 'w') as j:
+    with open(extra_json_file_path, 'w') as j:
         j.write(extra_data)
-    print(f"{cnt} entries detected in total\nwith {entry_cnt} normal entries saved to {json_file}\nand {extra_cnt} abnormal entries saved to {extra_file}")
+    print(f"{cnt} entries detected in total, with")
+    print(f"{entry_cnt} normal entries saved to {json_file_path} and")
+    print(f"{extra_cnt} abnormal entries saved to {extra_json_file_path}")
 
 curr_dir = os.path.curdir # project dir (base dir)
-# Example usage
 fasta_file_path = os.path.join(curr_dir , "data/OriginData/cds_from_genomic.fna")
 json_file_path = os.path.join(curr_dir , "data/JsonData/cds_json.json")
-extra_file_path = os.path.join(curr_dir , "data/JsonData/cds_json_extra.json")
-json_data = fasta_to_json(fasta_file_path, json_file_path, extra_file_path)
+extra_json_file_path = os.path.join(curr_dir , "data/JsonData/aborted_cds_json.json")
+fasta_to_json()
