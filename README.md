@@ -1,7 +1,8 @@
-# EcoliTEDVisualization
+# E.coli Translation Elongation Dynamics Visualization
 
-PKU生物大分子工程课程作业
-目的为可视化大肠杆菌（Escherichia coli）细胞内蛋白质的翻译延长动力学（Translation Elongation Dynamics）
+PKU生物大分子工程课程项目
+
+目的为可视化大肠杆菌（Escherichia coli, E.coli）细胞内蛋白质的翻译延长动力学（Translation Elongation Dynamics）
 
 ### 实现方法
 对每个密码子进行翻译延长速率常数的计算，进而以此常数为基准对于蛋白质上每个残基进行标记，最终采用Pymol实现可视化pdb，以标记数值的大小进行不同颜色的染色
