@@ -9,7 +9,9 @@ PKU生物大分子工程课程项目
 
 ### 参考文献
 本项目基于下列文献建立
+
 Vieira JP, Racle J, Hatzimanikatis V (2016) Analysis of translation elongationdynamics in the context of anEscherichia colicell.Biophys J110:2120–2131
+
 https://doi.org/10.1016/j.bpj.2016.04.004
 
 ## 生物大分子工程
