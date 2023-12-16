@@ -1,0 +1,3 @@
+cds_from_genomic.fna为基因编码序列文件
+UP000000625_83333.fasta为蛋白质序列文件
+GCF_000005845.2_ASM584v2_genomic.fna为基因组序列文件
