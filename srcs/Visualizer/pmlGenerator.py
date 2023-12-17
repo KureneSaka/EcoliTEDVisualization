@@ -3,7 +3,8 @@ import os
 from k2color import normalizer
 
 
-def pmlGenerator(name:str, k_seq:list[float], NM:str, AM:str):
+def pmlGenerator(name:str, NM:str, AM:str):
+    k_seq = calculator(name)
     lenth = len(k_seq)
     color_seq = normalizer(k_seq, NM, AM)
     pml_dir = os.path.join(scripts_dir , name + ".pml")
@@ -17,4 +18,4 @@ def pmlGenerator(name:str, k_seq:list[float], NM:str, AM:str):
 
 curr_dir = os.path.curdir
 scripts_dir = os.path.join(curr_dir , "scripts/")
-pmlGenerator("P00561", calculator("P00561"), "Sin", "Side")
+pmlGenerator("P24077","Sin", "Side")
