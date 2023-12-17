@@ -3,7 +3,7 @@ import csv
 import os
 TOTAL_TRNA_ID = 43
 
-def calculator(protein_id:str):
+def calculator(protein_id:str)->list[float]:
     # load protein data
     with open(data_file_path) as f:
         data = json.load(f)[protein_id]
@@ -47,10 +47,9 @@ def calculator(protein_id:str):
             T_non += float(tRNA_uM[i])
         k = (T_wc+0.5884*T_wb+2.6233e-4*T_nc)/(0.0104+0.4556*T_wc+0.6864*T_wb+0.0613*T_nc+0.0171*T_non)
         k_list.append(k)
-    print(k_list)
+    return k_list
 
 curr_dir = os.path.curdir # project dir (base dir)
 data_file_path = os.path.join(curr_dir , "data/JsonData/selected_data_json.json")
 tRNA_csv = os.path.join(curr_dir , "srcs/Defs/tRNA.csv")
 codon2tRNA_json = os.path.join(curr_dir , "srcs/Defs/Codon2tRNA.json")
-calculator("P0AC98")

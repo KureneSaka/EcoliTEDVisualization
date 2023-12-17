@@ -1,3 +1,5 @@
-/data/pdbs
-/essays
-/report
+data/pdbs/
+essays/
+report/
+scripts/
+*__pycache__/
